@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block body %}
+
+        <div class="ui text container">
+            <h1 class="ui dividing header">Using Grids</h1>
+
+            <h3 class="first">Container</h3>
+
+            <p>A container is a fixed width element that wraps your site's content. It remains a constant size and uses
+                <b>margin</b> to center. Containers are the simplest way to center page content inside a grid.</code>
+            </p>
+        </div>
+
+        <div class="ui very relaxed items">
+            <div class="item">
+                <div class="content">
+                    <a class="ui header" href="#link">Titulo</a>
+
+                    <div class="description">
+                        <p>Data Atualizacao <a href="#link">aqui</a></p>
+                    </div>
+                    <div class="extra">
+                        Rating:
+                        <div class="ui star rating" data-rating="4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <a class="ui header" href="#link">Titulo 2</a>
+
+                    <div class="description">
+                        <p>Data Atualizacao <a href="#link">aqui</a></p>
+                    </div>
+                    <div class="extra">
+                        Rating:
+                        <div class="ui star rating" data-rating="4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <a class="ui header" href="#link">Titulo 3</a>
+
+                    <div class="description">
+                        <p>Data Atualizacao <a href="#link">aqui</a></p>
+                    </div>
+                    <div class="extra">
+                        Rating:
+                        <div class="ui star rating" data-rating="4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+{% block javascripts %}{{ parent() }}{% endblock %}

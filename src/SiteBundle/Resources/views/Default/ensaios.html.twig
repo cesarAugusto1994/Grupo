@@ -1,0 +1,116 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}{{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="ui text container">
+        <h1 class="ui dividing header">Titulo</h1>
+    </div>
+
+    <div class="ui tabular secondary menu">
+        <div class="item" data-tab="tab-name">Letra</div>
+        <div class="item" data-tab="tab-name2">Anexos</div>
+    </div>
+    <div class="ui tab" data-tab="tab-name">
+
+        <table class="ui definition table">
+            <tbody>
+            <tr>
+                <td class="two wide column">Ritmo</td>
+                <td>Fox Abafado</td>
+            </tr>
+            <tr>
+                <td>Melodia</td>
+                <td>Indisponivel</td>
+            </tr>
+            <tr>
+                <td>Compasso</td>
+                <td>2/4</td>
+            </tr>
+            <tr>
+                <td>Tonalidade</td>
+                <td>E</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <pre>
+
+        </pre>
+    </div>
+    <div class="ui tab" data-tab="tab-name2">
+        <h4 class="ui horizontal divider header">
+            <i class="sound icon"></i>
+            Vozes
+        </h4>
+        <table class="ui definition table">
+            <thead>
+            <tr><th></th>
+                <th>Midi</th>
+                <th>Partitura</th>
+            </tr></thead>
+            <tbody>
+            <tr>
+                <td class="two wide column">Soprando</td>
+                <td>Disponivel</td>
+                <td>Disponivel</td>
+            </tr>
+            <tr>
+                <td>Contralto</td>
+                <td>Indisponivel</td>
+                <td>Indisponivel</td>
+            </tr>
+            <tr>
+                <td>Tenor</td>
+                <td>Disponivel</td>
+                <td>Indisponivel</td>
+            </tr>
+            <tr>
+                <td>Baixo</td>
+                <td>Indisponivel</td>
+                <td>Disponivel</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4 class="ui horizontal divider header">
+            <i class="music icon"></i>
+            Instrumentos
+        </h4>
+        <table class="ui definition table">
+            <thead>
+            <tr><th></th>
+                <th>Midi</th>
+                <th>Partitura</th>
+            </tr></thead>
+            <tbody>
+            <tr>
+                <td class="two wide column">Teclado</td>
+                <td>Disponivel</td>
+                <td>Disponivel</td>
+            </tr>
+            <tr>
+                <td>Violao</td>
+                <td class="error">Indisponivel</td>
+                <td class="error">Indisponivel</td>
+            </tr>
+            <tr>
+                <td>Bateria</td>
+                <td>Disponivel</td>
+                <td class="error">Indisponivel</td>
+            </tr>
+            <tr>
+                <td>Contra Baixo</td>
+                <td class="error">Indisponivel</td>
+                <td>Disponivel</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}
+{% block javascripts %}{{ parent() }}
+<script type="text/javascript">
+    $('.tabular.menu .item').tab();
+</script>
+{% endblock %}
