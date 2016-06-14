@@ -1,79 +1,207 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <!-- Standard Meta -->
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <!-- Site Properties -->
+    <title>{% block title %}Homepage - Semantic{% endblock %}</title>
     {% block stylesheets %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/semantic.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/site.min.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/public/css/semantic.min.css') }}">
-    <!--
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/public/css/homepage.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/reset.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/container.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/grid.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/header.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/image.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/menu.min.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/public/iconfonts/flaticon.css') }}">-->
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/divider.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/dropdown.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/segment.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/button.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/list.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/icon.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/sidebar.min.css') }}">
+        <link rel="stylesheet" type="text/css"
+              href="{{ asset('assets/vendor/semantic/dist/components/transition.min.css') }}">
 
-    <script src="{{ asset('http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js') }}"></script>
-    <script src="{{ asset('assets/public/js/semantic.min.js') }}"></script>
-    <script src="{{ asset('assets/public/js/homepage.js') }}"></script>
-    <script>
-        $(function () {
-            $('.ui.card').popup();
-        });
-    </script>
+        <style type="text/css">
+
+            .hidden.menu {
+                display: none;
+            }
+
+            .masthead.segment {
+                min-height: 700px;
+                padding: 1em 0em;
+            }
+
+            .masthead .logo.item img {
+                margin-right: 1em;
+            }
+
+            .masthead .ui.menu .ui.button {
+                margin-left: 0.5em;
+            }
+
+            .masthead h1.ui.header {
+                margin-top: 3em;
+                margin-bottom: 0em;
+                font-size: 4em;
+                font-weight: normal;
+            }
+
+            .masthead h2 {
+                font-size: 1.7em;
+                font-weight: normal;
+            }
+
+            .ui.vertical.stripe {
+                padding: 8em 0em;
+            }
+
+            .ui.vertical.stripe h3 {
+                font-size: 2em;
+            }
+
+            .ui.vertical.stripe .button + h3,
+            .ui.vertical.stripe p + h3 {
+                margin-top: 3em;
+            }
+
+            .ui.vertical.stripe .floated.image {
+                clear: both;
+            }
+
+            .ui.vertical.stripe p {
+                font-size: 1.33em;
+            }
+
+            .ui.vertical.stripe .horizontal.divider {
+                margin: 3em 0em;
+            }
+
+            .quote.stripe.segment {
+                padding: 0em;
+            }
+
+            .quote.stripe.segment .grid .column {
+                padding-top: 5em;
+                padding-bottom: 5em;
+            }
+
+            .footer.segment {
+                padding: 5em 0em;
+            }
+
+            .secondary.pointing.menu .toc.item {
+                display: none;
+            }
+
+            @media only screen and (max-width: 700px) {
+                .ui.fixed.menu {
+                    display: none !important;
+                }
+
+                .secondary.pointing.menu .item,
+                .secondary.pointing.menu .menu {
+                    display: none;
+                }
+
+                .secondary.pointing.menu .toc.item {
+                    display: block;
+                }
+
+                .masthead.segment {
+                    min-height: 350px;
+                }
+
+                .masthead h1.ui.header {
+                    font-size: 2em;
+                    margin-top: 1.5em;
+                }
+
+                .masthead h2 {
+                    margin-top: 0.5em;
+                    font-size: 1.5em;
+                }
+            }
+
+
+        </style>
     {% endblock %}
 </head>
-<body id="home">
+<body>
 
-        <div class="ui menu">
-            <a class="item" href="{{ path('site_default_index') }}">
-                Home
-            </a>
-            <div class="ui pointing dropdown link item">
-                <span class="text">Shopping</span>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                    <div class="header">Categories</div>
-                    <div class="item">
-                        <i class="dropdown icon"></i>
-                        <span class="text">Clothing</span>
-                        <div class="menu">
-                            <div class="header">Mens</div>
-                            <div class="item">Shirts</div>
-                            <div class="item">Pants</div>
-                            <div class="item">Jeans</div>
-                            <div class="item">Shoes</div>
-                            <div class="divider"></div>
-                            <div class="header">Womens</div>
-                            <div class="item">Dresses</div>
-                            <div class="item">Shoes</div>
-                            <div class="item">Bags</div>
-                        </div>
-                    </div>
-                    <div class="item">Home Goods</div>
-                    <div class="item">Bedroom</div>
-                    <div class="divider"></div>
-                    <div class="header">Order</div>
-                    <div class="item">Status</div>
-                    <div class="item">Cancellations</div>
-                </div>
-            </div>
-            <a class="item" href="{{ path('ensaios') }}">
-                Ensaios
-            </a>
-            <a class="item" href="{{ path('contato') }}">
-                Contato
-            </a>
-        </div>
+{% block menu %}{% endblock %}
 
-    {% block body %}{% endblock %}
+<!-- Page Contents -->
+<div class="pusher">
+
+    {% block floatmenu %}{% endblock %}
+
+    <div class="ui container">
+
+        {% block body %}{% endblock %}
+
+    </div>
+
+</div>
 
 
-{% block javascripts %}{% endblock %}
+{% block javascript %}
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/semantic/dist/semantic.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/semantic/dist/components/visibility.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/semantic/dist/components/sidebar.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/semantic/dist/components/transition.min.js') }}"></script>
+    <script>
+        $(document)
+                .ready(function () {
+
+                    // fix menu when passed
+                    $('.masthead')
+                            .visibility({
+                                once: false,
+                                onBottomPassed: function () {
+                                    $('.fixed.menu').transition('fade in');
+                                },
+                                onBottomPassedReverse: function () {
+                                    $('.fixed.menu').transition('fade out');
+                                }
+                            })
+                    ;
+
+                    // create sidebar and attach to menu open
+                    $('.ui.sidebar')
+                            .sidebar('attach events', '.toc.item')
+                    ;
+
+                })
+        ;
+    </script>
+    <script type="text/javascript">
+        $('.tabular.menu .item').tab();
+    </script>
+{% endblock %}
 </body>
-</html>
 
+</html>

@@ -1,9 +1,13 @@
-{% extends '::base.html.twig' %}
-{% block stylesheets %}{{ parent() }}
+{% extends '::template.html.twig' %}
+{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block menu %}
+    {% include ':default/components:staticmenu.html.twig' %}
 {% endblock %}
+
 {% block body %}
+
     <div class="ui text container">
-        <h1 class="ui dividing header">Titulo</h1>
+        <h1 class="ui dividing header"></h1>
     </div>
 
     <div class="ui tabular secondary menu">
@@ -105,12 +109,5 @@
             </tbody>
         </table>
     </div>
-
-
-
 {% endblock %}
-{% block javascripts %}{{ parent() }}
-<script type="text/javascript">
-    $('.tabular.menu .item').tab();
-</script>
-{% endblock %}
+{% block javascripts %}{{ parent() }}{% endblock %}
