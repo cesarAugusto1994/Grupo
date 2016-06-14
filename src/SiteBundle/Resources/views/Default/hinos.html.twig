@@ -1,0 +1,33 @@
+{% extends '::template.html.twig' %}
+{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block menu %}
+    {% include ':default/components:staticmenu.html.twig' %}
+{% endblock %}
+{% block body %}
+
+
+    <div class="ui text container">
+        <h1 class="ui dividing header"></h1>
+    </div>
+
+    <h3 class="first">Lista</h3>
+
+    <table class="ui celled table">
+        <thead>
+        <tr><th>Nome</th>
+            <th>Categoria</th>
+            <th>Autor</th>
+        </tr></thead>
+        <tbody>
+        {% for hino in hinos %}
+        <tr>
+            <td>{{ hino.nome }}</td>
+            <td>{{ hino.categoria }}</td>
+            <td>{{ hino.autor }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+{% block javascripts %}{{ parent() }}{% endblock %}

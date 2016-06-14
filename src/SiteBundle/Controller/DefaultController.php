@@ -32,4 +32,14 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('@Site/Default/contato.html.twig');
     }
+
+    /**
+     * @Route("/hinos", name="hinos")
+     */
+    public function hinosAction()
+    {
+        $repository = $this->getDoctrine()->getRepository('SiteBundle:Hino');
+
+        return $this->render('@Site/Default/hinos.html.twig', array('hinos' => $repository->findAll()));
+    }
 }
